@@ -11,7 +11,7 @@ export default function App() {
     const [meaning, setMeaning] = useState("");
 
     const toggle = () => {
-        const filterData = word.find((ele) => ele.word === text);
+        const filterData = word.find((ele) => ele.word.toLowerCase() === text.toLowerCase());
         if (filterData) {
             setFound(true);
             setMeaning(filterData.meaning);
