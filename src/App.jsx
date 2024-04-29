@@ -38,7 +38,7 @@ export default function App() {
             {found ? (
                 <p>{meaning}</p>
             ) : (
-                alert ? (
+                !alert ? (
                     <></>
                 ) : (
                     <p>Word not found in the dictionary.</p>
