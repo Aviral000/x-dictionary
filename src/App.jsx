@@ -9,9 +9,11 @@ export default function App() {
     const [text, setText] = useState("");
     const [found, setFound] = useState(false);
     const [meaning, setMeaning] = useState("");
+    const [alert, setAlert] = useState(false);
 
     const toggle = () => {
         const filterData = word.find((ele) => ele.word.toLowerCase() === text.toLowerCase());
+        setAlert(true);
         if (filterData) {
             setFound(true);
             setMeaning(filterData.meaning);
@@ -36,7 +38,7 @@ export default function App() {
             {found ? (
                 <p>{meaning}</p>
             ) : (
-                meaning.length === 0 && text.length === 0 ? (
+                alert ? (
                     <></>
                 ) : (
                     <p>Word not found in the dictionary.</p>
